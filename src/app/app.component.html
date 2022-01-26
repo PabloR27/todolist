@@ -1,0 +1,12 @@
+<h1>Hola a todos</h1>
+<div class="container">
+  <input class="input-todo" type="text" [(ngModel)]="todo"/>
+  <button class="btn-todo" (click)="addTodo()" >Añadir tarea</button>
+  <div class="container-todo">
+    <h3 class="todo-title" *ngIf="tareas.length > 0; else noTareas">Mis tareas</h3>
+    <ng-template #noTareas>
+    <h3 class="todo-title">No hay tareas.</h3>
+    </ng-template>
+    <div class="contenedor-tarea"*ngFor="let todo of tareas; let i = index"> <div  class="todo" >{{todo}}</div><button (click)="borrarTarea(i)">X</button></div>
+    </div>
+</div>
